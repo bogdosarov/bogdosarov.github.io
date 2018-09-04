@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Willsub Plus</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, serif;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 25px;
+      background: #497DF6
+    }
+
+    .action-button {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #cdcdcd;
+      margin: 10px 0;
+    }
+
+    .action-buttons-list {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <audio src="./assets/tracks/1.mp3" preload="auto" controls></audio>
+  <div class="controls">
+    <div class="button" onclick="play()">Play</div>
+    <div class="button" onclick="pause()">pause</div>
+    <div class="action-buttons-list">
+      <div>
+        <div class="action-button" onclick="playFrom(24)">Выход Люды 0:24</div>
+      </div>
+      <div>
+        <div class="action-button" onclick="playFrom(38)">Выход Игоря 0:38</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.track = document.querySelector('audio')
+
+  const play = () => window.track.play()
+
+  const pause = () => window.track.pause()
+
+  const playFrom = time => {
+    window.track.currentTime = time
+    window.track.play()
+  }
+</script>
+</body>
+</html>
